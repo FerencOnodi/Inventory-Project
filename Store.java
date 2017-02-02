@@ -8,7 +8,14 @@ public abstract class Store implements StoreCapable {
 	protected void storeProduct(Product product) {
 	}
 
-	protected void createProduct(String type, String name, int price, int size) {
+	protected Product createProduct(String type, String name, int price, int size) {
+		if(type == "CD") {
+			Product cd = new CDProduct(name, price, size);
+			return cd;
+		} else {
+			Product book = new Bookproduct(name, price, size);
+			return book;
+		}
 	}
 
 	public ArrayList<Product> loadProducts() {

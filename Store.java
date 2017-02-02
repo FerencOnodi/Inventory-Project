@@ -5,8 +5,7 @@ public abstract class Store implements StoreCapable {
 		Element root = new Element("Product");		
 	}
 
-	protected void storeProduct(Product product) {
-	}
+	protected abstract void storeProduct(Product product);
 
 	protected Product createProduct(String type, String name, int price, int size) {
 		if(type == "CD") {
@@ -22,6 +21,7 @@ public abstract class Store implements StoreCapable {
 	}
 	
 	public void store(Product product) {
+		saveToXML(product)
 	}
 
 	void storeCDProduct(String name, int price, int tracks) {

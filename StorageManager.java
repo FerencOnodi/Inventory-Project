@@ -5,11 +5,13 @@ public class StorageManager {
 	}
 
 	public void addCDProduct(String name, int price, int tracks) {
-		Product cd = ((Store)storage).createProduct("CD", name, price, tracks);
+		Product cd = ((Store) storage).createProduct("CD", name, price, tracks);
+		((Store) storage).store(cd);
 	}
 
 	public void addBookProduct(String name, int price, int size) {
-		Product book = ((Store)storage).createProduct("Book", name, price, size);
+		Product book = ((Store) storage).createProduct("Book", name, price, size);
+		((Store) storage).store(book);
 	}
 
 	public String listProducts() {

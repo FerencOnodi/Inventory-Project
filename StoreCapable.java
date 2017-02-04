@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+
 public interface StoreCapable {
 
 	public ArrayList<Product> getAllProduct();

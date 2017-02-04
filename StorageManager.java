@@ -1,24 +1,32 @@
 public class StorageManager {
 
+	private StoreCapable storage;
+
 	public void addStorage(StoreCapable storage) {
 		this.storage = storage;
 	}
 
 	public void addCDProduct(String name, int price, int tracks) {
-		Product cd = ((Store) storage).createProduct("CD", name, price, tracks);
-		((Store) storage).store(cd);
+		storage.storeCDProduct(name, price, tracks);
 	}
 
 	public void addBookProduct(String name, int price, int size) {
-		Product book = ((Store) storage).createProduct("Book", name, price, size);
-		((Store) storage).store(book);
+		storage.storeBookProduct(name, price, size);
 	}
 
 	public String listProducts() {
-	return listOfProducts;
+		String products = "";
+		for(Product product : storage.getAllProduct()) {
+			products += product.name + ", ";
+		}
+		return products;
 	}
 
 	public int getTotalProductPrice() {
-	return price;
+		int price = 0;
+		for(Product product : storage.getAllProduct()) {
+			price += product.price;
+		}
+		return price;
 	}
 }

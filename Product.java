@@ -1,4 +1,4 @@
-puvlic abstract class Product {
+public abstract class Product {
 
 	public String name;
 	public Integer price;
